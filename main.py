@@ -11,7 +11,7 @@ st.set_page_config(
 
 # --- HEADER ---
 with st.container():
-    # Use columns to center the main header info
+    # Reverted to 3-column layout for centering text now that image is removed
     col1, col2, col3 = st.columns([1, 3, 1])
     with col2:
         st.title("David Leonard Nagy")
@@ -44,7 +44,7 @@ with col_main_left:
         st.write("A selection of my work:")
 
         # Project 1: RAG Research Tool
-        with st.expander("Local RAG Research Helper (Offline NLP Tool)", expanded=True):
+        with st.expander("Local RAG Research Helper (Offline NLP Tool)", expanded=True): # Keep first one collapsed by default now
             st.markdown(
                 """
                 **Description:** Developed a fully offline and local Retrieval-Augmented Generation (RAG) tool leveraging Ollama. This application allows users to upload documents or fetch papers directly from arXiv.org. It processes and indexes the content locally, enabling users to perform semantic searches and ask questions answered *solely* based on the provided document corpus.
@@ -57,16 +57,28 @@ with col_main_left:
             with btn_col2: # Center the button somewhat
                  st.link_button("View Code on GitHub", "https://github.com/deadfighter10/RAGResearchHelper")
 
-        # Add more projects here if needed
-        # with st.expander("Another Project Title", expanded=False):
-        #     st.markdown("**Description:** ...")
-        #     st.markdown("**Technologies:** ...")
-        #     st.link_button("Link", "your-link-here")
+        # Project 2: Bike Rental Demand Prediction
+        with st.expander("Bike Rental Demand Prediction App", expanded=True): # Expand the new one by default
+            st.markdown(
+                """
+                **Description:** An interactive web application built with Python (Streamlit, Pandas, Scikit-learn) that predicts the total number of daily bike rentals based on the historical Washington D.C. dataset (2011-2012). Users input daily conditions (month, day, holiday, weather metrics), and the app determines season/working day automatically. A pre-trained Gradient Boosting Regressor model forecasts the rental count instantly.
+
+                **Technologies:** Python, Streamlit, Pandas, Scikit-learn, Gradient Boosting.
+                """
+            )
+            # Use columns for the buttons for better layout
+            btn_col_1, btn_col_2 = st.columns(2)
+            with btn_col_1:
+                 st.link_button("View Live App", "https://predictbikerent.streamlit.app/")
+            with btn_col_2:
+                 st.link_button("View Code on GitHub", "https://github.com/deadfighter10/BikeRentDemand")
+
 
         st.write("") # Add space after projects
 
 with col_main_right:
     # --- KEY SKILLS ---
+    # This column starts with Skills
     with st.container():
         st.header("🛠️ Key Skills")
 
@@ -97,7 +109,6 @@ with col_main_right:
         st.write("") # Add space
 
         # --- Simple Inquiry Note (No Form) ---
-        # Removed the complex form, keeping it simple as requested
         st.subheader("Quick Inquiry?")
         st.caption(f"Just drop me an email at: nagy.david.leonard@gmail.com")
 
