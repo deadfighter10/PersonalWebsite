@@ -29,7 +29,7 @@ with col_main_left:
         st.header("👤 About Me")
         st.markdown( # Using markdown for slightly richer formatting
             """
-            Hi! I'm David, an 18-year-old developer from Hungary with a passion for building robust applications and exploring the frontiers of Artificial Intelligence.
+            Hi! I'm Leo, an 18-year-old developer from Hungary with a passion for building robust applications and exploring the frontiers of Artificial Intelligence.
 
             My expertise spans **Full-Stack Development** and **Machine Learning Engineering**, with a particular focus on **Natural Language Processing (NLP)** and **Kernel Methods**. I also have experience in **Game Development** and **Mobile App Development**.
 
